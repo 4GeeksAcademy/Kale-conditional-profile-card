@@ -29,18 +29,67 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let fullname = "";
+  if (variables.name == null) {
+    fullname += "Your name";
+  } else {
+    fullname += variables.name;
+  }
+  if (variables.lastName == null) {
+    fullname += " " + "Your lastname";
+  } else {
+    fullname += " " + variables.lastName;
+  }
+
+  let role = "";
+  if (variables.role != null) {
+    role += variables.role;
+  } else {
+    role += " " + "Role";
+  }
+
+  let city = "";
+  if (variables.city != null) {
+    city += variables.city + ",";
+  } else {
+    city += " " + "City,";
+  }
+
+  let country = "";
+  if (variables.country != null) {
+    country += variables.country;
+  } else {
+    country += " " + "Country";
+  }
+
+  let twitterUrl = variables.twitter
+    ? `https://twitter.com/${twitterUrl}`
+    : "https://twitter.com";
+
+  let githubUrl = variables.github
+    ? `https://github.com/${githubUrl}`
+    : "https://github.com";
+
+  let linkedinUrl = variables.linkedin
+    ? `https://linkedin.com/in/${linkedinUrl}`
+    : "https://linkedin.com";
+
+  let instagramUrl = variables.instagram
+    ? `https://instagram.com/${instagramUrl}`
+    : "https://instagram.com";
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${fullname}</h1>
+          <h2>${role}</h2>
+          <h3>${city} ${country}</h3>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="${twitterUrl}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="${githubUrl}"><i class="fab fa-github"></i></a></li>
+            <li><a href="${linkedinUrl}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="${instagramUrl}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -58,7 +107,8 @@ window.onload = function() {
     // this is the url for the profile avatar
     avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
     // social media bar position (left or right)
-    socialMediaPosition: "position-left",
+    socialMediaPosition:
+      "posithttps://github.com/breatheco-de/exercise-conditional-profile-card.gition-left",
     // social media usernames
     twitter: null,
     github: null,
