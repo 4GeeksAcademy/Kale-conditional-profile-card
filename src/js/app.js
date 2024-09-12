@@ -63,19 +63,19 @@ function render(variables = {}) {
   }
 
   let twitterUrl = variables.twitter
-    ? `https://twitter.com/${twitterUrl}`
+    ? `https://twitter.com/${variables.twitter}`
     : "https://twitter.com";
 
   let githubUrl = variables.github
-    ? `https://github.com/${githubUrl}`
+    ? `https://github.com/${variables.github}`
     : "https://github.com";
 
   let linkedinUrl = variables.linkedin
-    ? `https://linkedin.com/in/${linkedinUrl}`
+    ? `https://linkedin.com/in/${variables.linkedin}`
     : "https://linkedin.com";
 
   let instagramUrl = variables.instagram
-    ? `https://instagram.com/${instagramUrl}`
+    ? `https://instagram.com/${variables.instagram}`
     : "https://instagram.com";
 
   // reset the website body with the new html output
