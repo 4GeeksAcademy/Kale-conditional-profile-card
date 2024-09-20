@@ -107,8 +107,7 @@ window.onload = function() {
     // this is the url for the profile avatar
     avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
     // social media bar position (left or right)
-    socialMediaPosition:
-      "posithttps://github.com/breatheco-de/exercise-conditional-profile-card.gition-left",
+    socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
     github: null,
